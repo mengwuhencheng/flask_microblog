@@ -1,0 +1,11 @@
+#Use bellow commands to runserver
+$python run.py runserver -h 192.168.106.128 -r -d
+
+$python run.py shell
+
+#use commands to Migrate db
+
+$ python manage.py db init
+$ python manage.py db migrate
+$ python manage.py db upgrade
+$ python manage.py db --help
