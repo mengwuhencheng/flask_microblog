@@ -17,12 +17,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav nav-pills" role="tablist">
-                <li role="presentation" class="active"><a href="{{ url_for('index') }}">Home</a></li>
+                <li role="presentation" class="active"><a href="{{ url_for('main.index') }}">Home</a></li>
                 <li role="presentation"><a href="#">Profile</a></li>
                 <li role="presentation"><a href="#">Messages</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    {% if g.user.is_authenticated %}
+                    {% if current_user.is_authenticated %}
                         <a href="{{ url_for('user',username = g.user.username) }}">Your Profile</a>
                         <div class="dropdown">
                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
@@ -30,16 +30,16 @@
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ url_for('Change_Password') }}">Chang Password</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ url_for('auth.Change_Password') }}">Chang Password</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
                             </ul>
                         </div>
 
-                        <a href="{{ url_for('logout') }}">Logout</a>
+                        <a href="{{ url_for('auth.logout') }}">Sign Out</a>
                     {% else %}
-                        <a href="{{ url_for('login') }}">Login</a>
+                        <a href="{{ url_for('auth.login') }}">Sign In</a>
                     {% endif %}
                 </ul>
 
