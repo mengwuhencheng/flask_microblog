@@ -1,15 +1,5 @@
-<!-- extend base layout -->
 
-<!-- {% extends "base.html" %}
 
-{% block page_content %}
-    {% if current_user is authenticated %}
-        <h1>Welcome, {{ current_user.username }}!</h1>
-    {% else %}
-        <h1>Welcome ,Stranger </h1>
-    {% endif %}
-
-{% endblock %} -->
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 {% block title %}Flasky{% endblock %}
@@ -17,5 +7,6 @@
 <div class="page-header">
 <h1>Hello, {% if name %}{{ name }}{% else %}Stranger{% endif %}!</h1>
 </div>
-{{ wtf.quick_form(form) }}
+
+
 {% endblock %}

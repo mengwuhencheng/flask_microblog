@@ -6,7 +6,7 @@ from flask_login import current_user
 
 from . import auth
 from ..models import User
-from .forms import LoginForm
+from .forms import LoginForm,ChangePassword,RegistrationForm
 
 @auth.before_app_request
 def before_request():
