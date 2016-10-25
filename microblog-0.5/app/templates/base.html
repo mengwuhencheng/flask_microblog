@@ -36,20 +36,11 @@
                             <img src="{{ current_user.gravatar(size=18) }}">
                             Account <b class="caret"></b>
                         </a>
-                        <div class="dropdown-menu">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                                Account
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ url_for('auth.Change_Password') }}">Chang Password</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ url_for('auth.change_email_request') }}">Change Email</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-
-                        <a href="{{ url_for('auth.logout') }}">Sign Out</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url_for('auth.Change_Password') }}">Change Password</a></li>
+                            <li><a href="{{ url_for('auth.change_email_request') }}">Change Email</a></li>
+                            <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+                        </ul>
                     </li>
                     {% else %}
                         <a href="{{ url_for('auth.login') }}">Sign In</a>
